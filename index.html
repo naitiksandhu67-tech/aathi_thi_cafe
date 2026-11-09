@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Athi Thi Cafe | Aesthetic Cafe near Delhi Gate</title>
+<meta name="description" content="Athi Thi Cafe - a new aesthetic cafe near Delhi Gate. Coffee, shakes, snacks, desserts and good vibes. Rated 4 stars.">
+<meta property="og:title" content="Athi Thi Cafe | Near Delhi Gate">
+<meta property="og:description" content="Aesthetic cafe with great coffee, snacks and vibes. Come hang out.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#14100d;--card:#1f1814;--card2:#2a211b;--cream:#f5ead8;--muted:#b9a995;--accent:#e8a34a;--accent2:#ff7a59;--radius:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--cream);line-height:1.6;padding-bottom:70px}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:100%;max-width:1100px;margin:0 auto;padding:0 16px}
+section{padding:64px 0}
+.section-title{font-size:2rem;text-align:center;margin-bottom:8px}
+.section-sub{text-align:center;color:var(--muted);margin-bottom:32px}
+.btn{display:inline-block;padding:12px 26px;border-radius:50px;font-weight:500;border:2px solid var(--accent);transition:.25s;cursor:pointer;font-family:inherit;font-size:1rem}
+.btn-primary{background:var(--accent);color:#1a120b}
+.btn-primary:hover{background:var(--accent2);border-color:var(--accent2);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--cream)}
+.btn-outline:hover{background:var(--accent);color:#1a120b;transform:translateY(-2px)}
+
+/* Navbar */
+nav{position:fixed;top:0;left:0;width:100%;z-index:50;background:rgba(20,16,13,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--accent)}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{font-size:.95rem;color:var(--muted);transition:.2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-links .btn{padding:8px 18px;font-size:.9rem;color:#1a120b}
+.menu-toggle{display:none;background:none;border:none;color:var(--cream);font-size:1.7rem;cursor:pointer}
+@media(max-width:780px){
+ .menu-toggle{display:block}
+ .nav-links{position:absolute;top:64px;left:0;width:100%;background:var(--bg);flex-direction:column;padding:20px 0;gap:16px;display:none;border-bottom:1px solid rgba(255,255,255,.08)}
+ .nav-links.open{display:flex}
+}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;background:linear-gradient(rgba(20,16,13,.62),rgba(20,16,13,.9)),url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=70') center/cover,#2a211b;padding-top:64px}
+.badge{display:inline-block;background:rgba(232,163,74,.15);border:1px solid var(--accent);color:var(--accent);padding:6px 16px;border-radius:50px;font-size:.85rem;margin-bottom:18px}
+.hero h1{font-size:clamp(2.4rem,8vw,4.5rem);margin-bottom:12px}
+.hero h1 span{color:var(--accent)}
+.hero p{color:var(--muted);font-size:1.1rem;margin-bottom:28px}
+.hero .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.about-grid img{border-radius:var(--radius);height:340px;width:100%;object-fit:cover;background:var(--card2)}
+.about-grid p{color:var(--muted);margin-bottom:14px}
+@media(max-width:780px){.about-grid{grid-template-columns:1fr}}
+
+/* Menu */
+.tabs{display:flex;gap:10px;overflow-x:auto;padding-bottom:10px;margin-bottom:24px;justify-content:center;flex-wrap:wrap}
+.tab{background:var(--card);color:var(--muted);border:1px solid rgba(255,255,255,.08);padding:9px 20px;border-radius:50px;cursor:pointer;font-family:inherit;font-size:.92rem;transition:.2s}
+.tab.active,.tab:hover{background:var(--accent);color:#1a120b;border-color:var(--accent)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.menu-item{background:var(--card);border-radius:var(--radius);padding:18px 20px;display:flex;justify-content:space-between;gap:14px;border:1px solid rgba(255,255,255,.05);transition:.25s}
+.menu-item:hover{transform:translateY(-4px);border-color:var(--accent)}
+.menu-item h3{font-size:1.1rem;font-family:'Poppins',sans-serif;font-weight:500}
+.menu-item p{color:var(--muted);font-size:.88rem}
+.price{color:var(--accent);font-weight:600;white-space:nowrap}
+
+/* Best sellers */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--card);border-radius:var(--radius);overflow:hidden;transition:.25s;border:1px solid rgba(255,255,255,.05)}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.4)}
+.card img{height:200px;width:100%;object-fit:cover;background:var(--card2)}
+.card-body{padding:18px}
+.card-body h3{font-size:1.25rem;margin-bottom:4px}
+.card-body p{color:var(--muted);font-size:.9rem;margin-bottom:8px}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.gallery img{width:100%;height:220px;object-fit:cover;border-radius:14px;cursor:pointer;transition:.3s;background:var(--card2)}
+.gallery img:hover{transform:scale(1.03);filter:brightness(1.1)}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.lightbox.show{display:flex}
+.lightbox img{max-height:90vh;border-radius:12px}
+
+/* Reviews */
+.rating-box{text-align:center;margin-bottom:24px}
+.rating-box .big{font-size:3rem;color:var(--accent);font-family:'Playfair Display',serif}
+.rating-box .stars{color:var(--accent);letter-spacing:4px}
+.review{background:var(--card);padding:22px;border-radius:var(--radius);border:1px solid rgba(255,255,255,.05)}
+.review p{margin-bottom:10px}
+.review b{color:var(--accent)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:780px){.contact-grid{grid-template-columns:1fr}}
+.contact-grid iframe{width:100%;height:100%;min-height:320px;border:0;border-radius:var(--radius)}
+.info p{margin-bottom:10px;color:var(--muted)}
+.info strong{color:var(--cream)}
+form{background:var(--card);padding:20px;border-radius:var(--radius);margin-top:18px;display:grid;gap:12px}
+input,select{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:var(--card2);color:var(--cream);font-family:inherit;font-size:.95rem}
+
+/* Footer */
+footer{background:#0e0b09;text-align:center;padding:34px 16px;color:var(--muted);font-size:.9rem}
+footer .logo{display:block;margin-bottom:8px}
+footer a{color:var(--accent)}
+
+/* Mobile bottom bar */
+.bottom-bar{display:none;position:fixed;bottom:0;left:0;width:100%;z-index:60}
+.bottom-bar a{flex:1;text-align:center;padding:15px;font-weight:600}
+.bottom-bar .call{background:var(--card2);color:var(--cream)}
+.bottom-bar .wa{background:#25D366;color:#06210f}
+@media(max-width:780px){.bottom-bar{display:flex}}
+
+/* Fade in */
+.fade{opacity:0;transform:translateY(24px);transition:.7s}
+.fade.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- ============ EDIT THIS SECTION ============ -->
+<script>
+const CONFIG = {
+  name: "Athi Thi Cafe",
+  phone: "91XXXXXXXXXX",              // WhatsApp number with 91, no + or spaces
+  phoneDisplay: "+91 XXXXX XXXXX",
+  instagram: "your_instagram_handle", // without @
+  hours: "Every day, 11:00 AM - 11:00 PM",
+  address: "Near Delhi Gate",
+  mapQuery: "Athi Thi Cafe Delhi Gate",
+  googleReviewsLink: "https://www.google.com/maps/search/?api=1&query=Athi+Thi+Cafe+Delhi+Gate"
+};
+
+// Menu: change names, descriptions and prices here
+const MENU = {
+  "Coffee": [
+    {n:"Cappuccino",d:"Rich espresso with creamy foam",p:120},
+    {n:"Cafe Latte",d:"Smooth espresso with steamed milk",p:130},
+    {n:"Hazelnut Coffee",d:"Sweet, nutty and warm",p:150},
+    {n:"Americano",d:"Bold and simple",p:100},
+    {n:"Filter Coffee",d:"Classic strong brew",p:90}
+  ],
+  "Cold Drinks": [
+    {n:"Iced Americano",d:"Chilled and strong",p:120},
+    {n:"Cold Coffee",d:"Creamy classic cold coffee",p:140},
+    {n:"Iced Latte",d:"Espresso over milk and ice",p:150},
+    {n:"Lemon Iced Tea",d:"Fresh and tangy",p:110},
+    {n:"Peach Iced Tea",d:"Sweet and fruity",p:120}
+  ],
+  "Shakes & Mocktails": [
+    {n:"Oreo Shake",d:"Thick, creamy and loaded",p:160},
+    {n:"Chocolate Shake",d:"Rich cocoa goodness",p:150},
+    {n:"Blue Lagoon",d:"Blue curacao mocktail",p:140},
+    {n:"Virgin Mojito",d:"Mint, lime and soda",p:130},
+    {n:"Watermelon Cooler",d:"Fresh and refreshing",p:130}
+  ],
+  "Snacks": [
+    {n:"Peri Peri Fries",d:"Crispy fries with a spicy kick",p:130},
+    {n:"Veg Momos",d:"Steamed, with spicy chutney",p:110},
+    {n:"Cheese Maggi",d:"Everyone's favorite comfort food",p:100},
+    {n:"Grilled Sandwich",d:"Veggies and melted cheese",p:120},
+    {n:"Garlic Bread",d:"Cheesy and golden",p:110}
+  ],
+  "Desserts": [
+    {n:"Chocolate Brownie",d:"Warm, fudgy and gooey",p:110},
+    {n:"Brownie with Ice Cream",d:"The ultimate combo",p:160},
+    {n:"Waffle",d:"Crisp waffle with chocolate drizzle",p:150},
+    {n:"Cheesecake Slice",d:"Creamy and smooth",p:170}
+  ],
+  "Meals": [
+    {n:"White Sauce Pasta",d:"Creamy pasta with veggies",p:210},
+    {n:"Red Sauce Pasta",d:"Tangy tomato pasta",p:200},
+    {n:"Paneer Wrap",d:"Spiced paneer in a soft wrap",p:160},
+    {n:"Veg Burger",d:"Crispy patty with fresh toppings",p:140}
+  ]
+};
+
+// Best sellers (images are placeholders, replace with your own photos later)
+const BEST = [
+  {n:"Cold Coffee",d:"Creamy, chilled and our most ordered drink",p:140,img:"https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=70"},
+  {n:"Peri Peri Fries",d:"Crispy, spicy, perfect with friends",p:130,img:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=70"},
+  {n:"Chocolate Brownie",d:"Warm and gooey, made to share",p:110,img:"https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=70"}
+];
+
+// Gallery photos (replace with your own cafe photos later)
+const GALLERY = [
+  "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=70",
+  "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=70",
+  "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=70",
+  "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=70",
+  "https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=70",
+  "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=70"
+];
+
+// Real customer reviews: paste real ones from Google here. Leave empty to hide the cards.
+// Example: {name:"Customer Name", text:"Their real review text"}
+const REVIEWS = [];
+</script>
+<!-- ============ END OF EDIT SECTION ============ -->
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#home" class="logo">Athi Thi Cafe</a>
+    <button class="menu-toggle" id="toggle" aria-label="Open menu">&#9776;</button>
+    <div class="nav-links" id="links">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary wa-link" target="_blank" rel="noopener">Order on WhatsApp</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container">
+    <span class="badge">&#9733; 4.0 rated &middot; Now open</span>
+    <h1>Sip. Chill. <span>Repeat.</span></h1>
+    <p>A new aesthetic cafe near Delhi Gate. Good coffee, good food, good company.</p>
+    <div class="btns">
+      <a href="#menu" class="btn btn-primary">View Menu</a>
+      <a href="#contact" class="btn btn-outline">Find Us</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container about-grid fade">
+    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1000&q=70" alt="Cozy cafe interior with warm lighting">
+    <div>
+      <h2 class="section-title" style="text-align:left">Our Story</h2>
+      <p>Athi Thi Cafe is a new hangout spot made for slow evenings, long conversations and perfect photos. We started with one simple idea: great coffee and comfort food in a space that feels like your own.</p>
+      <p>Bring your friends, your laptop or your date. There's always a table waiting and something good brewing.</p>
+      <a href="#contact" class="btn btn-outline">Plan Your Visit</a>
+    </div>
+  </div>
+</section>
+
+<section id="best" style="background:var(--card)">
+  <div class="container">
+    <h2 class="section-title fade">Best Sellers</h2>
+    <p class="section-sub fade">Crowd favorites you'll love</p>
+    <div class="cards" id="best-cards"></div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="container">
+    <h2 class="section-title fade">Our Menu</h2>
+    <p class="section-sub fade">Fresh, tasty and made with love</p>
+    <div class="tabs" id="tabs"></div>
+    <div class="menu-grid" id="menu-grid"></div>
+  </div>
+</section>
+
+<section id="gallery" style="background:var(--card)">
+  <div class="container">
+    <h2 class="section-title fade">Gallery</h2>
+    <p class="section-sub fade">A peek at the vibe</p>
+    <div class="gallery" id="gallery-grid"></div>
+    <p style="text-align:center;margin-top:24px"><a class="btn btn-outline ig-link" target="_blank" rel="noopener">Follow us on Instagram</a></p>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <div class="rating-box fade">
+      <div class="big">4.0</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+      <p class="section-sub" style="margin-bottom:16px">Rated by our customers on Google</p>
+      <a class="btn btn-outline" id="reviews-link" target="_blank" rel="noopener">Read Google Reviews</a>
+    </div>
+    <div class="cards" id="review-cards"></div>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--card)">
+  <div class="container">
+    <h2 class="section-title fade">Visit Us</h2>
+    <p class="section-sub fade">We'd love to see you</p>
+    <div class="contact-grid">
+      <div class="info">
+        <p><strong>Address:</strong> <span id="address"></span></p>
+        <p><strong>Hours:</strong> <span id="hours"></span></p>
+        <p><strong>Phone:</strong> <span id="phone"></span></p>
+        <form id="res-form">
+          <h3 style="font-size:1.2rem">Reserve a Table</h3>
+          <input type="text" id="f-name" placeholder="Your name" required>
+          <input type="datetime-local" id="f-time" required>
+          <select id="f-people">
+            <option>2 people</option><option>3 people</option><option>4 people</option>
+            <option>5-6 people</option><option>7+ people</option>
+          </select>
+          <button class="btn btn-primary" type="submit">Reserve on WhatsApp</button>
+        </form>
+      </div>
+      <iframe id="map" loading="lazy" title="Athi Thi Cafe location map"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#home" class="logo">Athi Thi Cafe</a>
+  <p><a class="ig-link" target="_blank" rel="noopener">Instagram</a> &middot; <a class="wa-link" target="_blank" rel="noopener">WhatsApp</a></p>
+  <p style="margin-top:10px">&copy; 2026 Athi Thi Cafe. All rights reserved.</p>
+</footer>
+
+<div class="bottom-bar">
+  <a class="call call-link">Call</a>
+  <a class="wa wa-link" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<div class="lightbox" id="lightbox"><img id="lightbox-img" alt="Gallery photo enlarged"></div>
+
+<script>
+// Links
+const waMsg = encodeURIComponent("Hi, I'd like to order from Athi Thi Cafe");
+document.querySelectorAll('.wa-link').forEach(a=>a.href=`https://wa.me/${CONFIG.phone}?text=${waMsg}`);
+document.querySelectorAll('.call-link').forEach(a=>a.href=`tel:+${CONFIG.phone}`);
+document.querySelectorAll('.ig-link').forEach(a=>a.href=`https://instagram.com/${CONFIG.instagram}`);
+document.getElementById('reviews-link').href = CONFIG.googleReviewsLink;
+document.getElementById('address').textContent = CONFIG.address;
+document.getElementById('hours').textContent = CONFIG.hours;
+document.getElementById('phone').textContent = CONFIG.phoneDisplay;
+document.getElementById('map').src = `https://www.google.com/maps?q=${encodeURIComponent(CONFIG.mapQuery)}&output=embed`;
+
+// Mobile nav
+const links = document.getElementById('links');
+document.getElementById('toggle').onclick = ()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+// Menu tabs
+const tabs = document.getElementById('tabs'), grid = document.getElementById('menu-grid');
+function showCat(cat){
+  grid.innerHTML = MENU[cat].map(i=>`<div class="menu-item"><div><h3>${i.n}</h3><p>${i.d}</p></div><div class="price">&#8377;${i.p}</div></div>`).join('');
+  tabs.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.cat===cat));
+}
+Object.keys(MENU).forEach(cat=>{
+  const b=document.createElement('button');
+  b.className='tab';b.textContent=cat;b.dataset.cat=cat;b.onclick=()=>showCat(cat);
+  tabs.appendChild(b);
+});
+showCat(Object.keys(MENU)[0]);
+
+// Best sellers
+document.getElementById('best-cards').innerHTML = BEST.map(b=>`
+  <div class="card fade"><img src="${b.img}" alt="${b.n}" loading="lazy"><div class="card-body"><h3>${b.n}</h3><p>${b.d}</p><span class="price">&#8377;${b.p}</span></div></div>`).join('');
+
+// Gallery + lightbox
+const gg = document.getElementById('gallery-grid');
+gg.innerHTML = GALLERY.map((s,i)=>`<img src="${s}" alt="Athi Thi Cafe photo ${i+1}" loading="lazy">`).join('');
+const lb = document.getElementById('lightbox'), lbi = document.getElementById('lightbox-img');
+gg.addEventListener('click',e=>{ if(e.target.tagName==='IMG'){lbi.src=e.target.src;lb.classList.add('show');} });
+lb.onclick = ()=>lb.classList.remove('show');
+
+// Reviews (only shows if you added real ones)
+document.getElementById('review-cards').innerHTML = REVIEWS.map(r=>`
+  <div class="review fade"><p>"${r.text}"</p><b>- ${r.name}</b></div>`).join('');
+
+// Reservation form -> opens WhatsApp
+document.getElementById('res-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=document.getElementById('f-name').value;
+  const time=document.getElementById('f-time').value.replace('T',' ');
+  const ppl=document.getElementById('f-people').value;
+  const msg=encodeURIComponent(`Hi, I'd like to reserve a table. Name: ${name}, Time: ${time}, Guests: ${ppl}`);
+  window.open(`https://wa.me/${CONFIG.phone}?text=${msg}`,'_blank');
+});
+
+// Fade-in on scroll
+const io = new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
